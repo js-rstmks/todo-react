@@ -18,7 +18,6 @@ function App() {
     const [startDate, setStartDate] = useState(new Date());
     const [errMsg, setErrMsg] = useState('')
 
-
     const handleToggle = (id) => {
         let mapped = toDoList.map(task => {
         return task.id == id ? { ...task, complete: !task.complete } : { ...task};
@@ -52,20 +51,20 @@ function App() {
         setToDoList(newToDoList)
     }
 
- return (
-   <div className="App">
-    <Header />
-        <ToDoList toDoList={toDoList}
-         handleToggle={handleToggle} 
-         handleFilter={handleFilter}
-         removeToDo={removeToDo}
-         />
-        <ToDoForm addTask={addTask}></ToDoForm>
-        {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
+    return (
+        <div className="App">
+            <Header />
+                <ToDoList toDoList={toDoList}
+                handleToggle={handleToggle} 
+                handleFilter={handleFilter}
+                removeToDo={removeToDo}
+                />
+                <ToDoForm addTask={addTask}></ToDoForm>
+                {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
 
-        {/* <p>{errMsg}</p> */}
-        {/* <ToastContainer className="notification-container"/> */}
-   </div>
+                {/* <p>{errMsg}</p> */}
+                {/* <ToastContainer className="notification-container"/> */}
+        </div>
  );
 }
 
